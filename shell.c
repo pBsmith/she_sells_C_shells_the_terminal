@@ -51,16 +51,16 @@ int main() {
         builtin_cmds[1] = "pwd";
         builtin_cmds[2] = "cd";
         
-        if (strstr(commands[0], builtin_cmds[0]) != NULL) {
+        if (strcmp(commands[0], builtin_cmds[0]) == 0) {
             break;
         }
         
-        if (strstr(commands[0], builtin_cmds[1]) != NULL) {
+        if (strcmp(commands[0], builtin_cmds[1]) == 0) {
             char pwd[INPUT_LEN];
             getcwd(pwd, sizeof(pwd));
         }
         
-        if (strstr(commands[0], builtin_cmds[2]) != NULL) {
+        if (strcmp(commands[0], builtin_cmds[2]) == 0) {
             chdir(commands[1]);
             continue;
         }
